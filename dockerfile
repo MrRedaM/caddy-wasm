@@ -7,8 +7,9 @@ COPY ./app /srv
 # Copy the Caddyfile to the container
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
-# Expose port 80 for incoming traffic
+# Expose port 80 and 443 for incoming traffic
 EXPOSE 80
+EXPOSE 443
 
 # Use the default Caddy startup command to run the web server
 CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
